@@ -14,12 +14,13 @@ class ProcessTheClient(asyncore.dispatcher_with_send):
 	   self.close()
 
 class Server(asyncore.dispatcher):
-	def __init__(self):
+	def __init__(self,portnumber):
                 asyncore.dispatcher.__init__(self)
 		self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
                 self.set_reuse_addr()
-		self.bind(('0.0.0.0',8887))
+		self.bind(('',portnumber))
                 self.listen(5)
+		print "running on port {}" . format(portnumber)
 
 	def handle_accept(self):
                 pair = self.accept()
@@ -29,9 +30,13 @@ class Server(asyncore.dispatcher):
 	                handler = ProcessTheClient(sock)
 
 def main():
-	svr = Server()
+	portnumber=8887
+	try:
+	   portnumber=int(sys.argv[1])
+	except:
+	   pass
+	svr = Server(portnumber)
 	asyncore.loop()
 
 if __name__=="__main__":
 	main()
-

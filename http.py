@@ -25,12 +25,12 @@ class HttpServer:
 		resp.append("\r\n")
 		resp.append("{}" . format(messagebody))
 		response_str=''
-		for i in resp:	
+		for i in resp:
 			response_str="{}{}" . format(response_str,i)
 		return response_str
 
 	def proses(self,data):
-		
+
 		requests = data.split("\r\n")
 		baris = requests[0]
 
@@ -52,16 +52,16 @@ class HttpServer:
 			return self.response(404,'Not Found','',{})
 		fp = open(thedir+object_address,'r')
 		isi = fp.read()
-		
+
 		fext = os.path.splitext(thedir+object_address)[1]
 		content_type = self.types[fext]
-		
+
 		headers={}
 		headers['Content-type']=content_type
-		
+
 		return self.response(200,'OK',isi,headers)
-		
-			 	
+
+
 #>>> import os.path
 #>>> ext = os.path.splitext('/ak/52.png')
 
@@ -69,22 +69,7 @@ if __name__=="__main__":
 	httpserver = HttpServer()
 	d = httpserver.proses('GET testing.txt HTTP/1.0')
 	print d
-        d = httpserver.http_get('testing2.txt')
+    d = httpserver.http_get('testing2.txt')
 	print d
-        d = httpserver.http_get('testing.txt')
+    d = httpserver.http_get('testing.txt')
 	print d
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

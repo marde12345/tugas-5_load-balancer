@@ -20,7 +20,7 @@ class ProcessTheClient(threading.Thread):
 			data = self.connection.recv(1024)
 			if data:
 				self.connection.sendall("{}" . format(httpserver.proses(data)))
-                                break
+				break
 			else:
 				break
 		self.connection.close()
@@ -37,16 +37,20 @@ class Server(threading.Thread):
 		while True:
 			self.connection, self.client_address = self.my_socket.accept()
 			print >> sys.stderr, 'connection from', self.client_address
-			
+
 			clt = ProcessTheClient(self.connection, self.client_address)
 			clt.start()
 			self.the_clients.append(clt)
-	
+
 
 def main():
-	svr = Server()
+	portnumber=8887
+	try:
+	   portnumber=int(sys.argv[1])
+	except:
+	   pass
+	svr = Server(portnumber)
 	svr.start()
 
 if __name__=="__main__":
 	main()
-
