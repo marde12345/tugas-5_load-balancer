@@ -12,6 +12,7 @@ class HttpServer:
 		self.types['.jpg']='image/jpeg'
 		self.types['.txt']='text/plain'
 		self.types['.html']='text/html'
+		
 	def response(self,kode=404,message='Not Found',messagebody='',headers={}):
 		tanggal = datetime.now().strftime('%c')
 		resp=[]
@@ -45,6 +46,7 @@ class HttpServer:
 				return self.response(400,'Bad Request','',{})
 		except IndexError:
 			return self.response(400,'Bad Request','',{})
+
 	def http_get(self,object_address):
 		files = glob('./*')
 		thedir='.'

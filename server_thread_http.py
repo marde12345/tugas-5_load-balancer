@@ -42,9 +42,8 @@ class Server(threading.Thread):
 			clt.start()
 			self.the_clients.append(clt)
 
-
 def main():
-	portnumber=8887
+	portnumber=8889
 	try:
 	   portnumber=int(sys.argv[1])
 	except:

@@ -23,11 +23,11 @@ class Server(asyncore.dispatcher):
 		print "running on port {}" . format(portnumber)
 
 	def handle_accept(self):
-                pair = self.accept()
-                if pair is not None:
-		        sock, addr = pair
-		        print >> sys.stderr, 'connection from', repr(addr)
-	                handler = ProcessTheClient(sock)
+        pair = self.accept()
+        if pair is not None:
+        sock, addr = pair
+        print >> sys.stderr, 'connection from', repr(addr)
+        handler = ProcessTheClient(sock)
 
 def main():
 	portnumber=8887
