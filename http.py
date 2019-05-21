@@ -12,7 +12,7 @@ class HttpServer:
 		self.types['.jpg']='image/jpeg'
 		self.types['.txt']='text/plain'
 		self.types['.html']='text/html'
-		
+
 	def response(self,kode=404,message='Not Found',messagebody='',headers={}):
 		tanggal = datetime.now().strftime('%c')
 		resp=[]
@@ -71,7 +71,7 @@ if __name__=="__main__":
 	httpserver = HttpServer()
 	d = httpserver.proses('GET testing.txt HTTP/1.0')
 	print d
-    d = httpserver.http_get('testing2.txt')
+	d = httpserver.http_get('testing2.txt')
 	print d
-    d = httpserver.http_get('testing.txt')
+	d = httpserver.http_get('testing.txt')
 	print d

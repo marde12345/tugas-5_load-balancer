@@ -26,13 +26,14 @@ class ProcessTheClient(threading.Thread):
 		self.connection.close()
 
 class Server(threading.Thread):
-	def __init__(self):
+	def __init__(self, portnumber):
+		self.portnumber = portnumber
 		self.the_clients = []
 		self.my_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		threading.Thread.__init__(self)
 
 	def run(self):
-		self.my_socket.bind(('0.0.0.0',8889))
+		self.my_socket.bind(('0.0.0.0', self.portnumber))
 		self.my_socket.listen(1)
 		while True:
 			self.connection, self.client_address = self.my_socket.accept()
@@ -45,9 +46,9 @@ class Server(threading.Thread):
 def main():
 	portnumber=8889
 	try:
-	   portnumber=int(sys.argv[1])
+		portnumber=int(sys.argv[1])
 	except:
-	   pass
+		pass
 	svr = Server(portnumber)
 	svr.start()
 

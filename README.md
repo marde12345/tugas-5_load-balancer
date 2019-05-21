@@ -12,3 +12,32 @@
 4. Buatlah sebuah program load balancer (dari contoh yang ada), untuk meningkatkan kemampuan system melayani lebih banyak request dan konkurensi
 5. Jalankan load balancer dan jalankan server di beberapa server yang berbeda untuk menjalankan kembali performance testing seperti pada poin 2
 6. Bandingkan kembali hasilnya
+
+### Usage
+#### Without Load Balancer
+- Thread
+    - `python server_thread_http.py`
+
+
+- Async
+    - `python server_async_http.py`
+
+
+#### With Load Balancer
+- Thread
+    - `bash thread.sh`
+
+
+- Async
+    - `bash async.sh`
+
+
+- Load Balancer
+    - on another terminal => `python load_balancing.py`
+
+
+#### How to Test
+
+- Testing
+    - on another terminal => `ab -m [method] -n [n_request] -c [concurrency level] url`
+    - CAUTION: if you test web server with load balancer, configure your url to you load balancer running port.

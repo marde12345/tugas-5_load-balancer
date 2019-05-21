@@ -1,0 +1,4 @@
+for i in {9001..9005}
+do
+    kill -9 `lsof -w -n -i tcp:$i| awk '{print $2}'|awk 'END{print}'`;
+done
