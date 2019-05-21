@@ -13,6 +13,7 @@ class BackendList:
 		self.servers.append(('127.0.0.1',9004))
 		self.servers.append(('127.0.0.1',9005))
 		self.current=0
+
 	def getserver(self):
 		s = self.servers[self.current]
 		self.current=self.current+1
@@ -64,8 +65,6 @@ class Server(asyncore.dispatcher):
 			backend = Backend(self.bservers.getserver())
 	                handler = ProcessTheClient(sock)
 			handler.backend = backend
-
-
 
 def main():
 	svr = Server()
