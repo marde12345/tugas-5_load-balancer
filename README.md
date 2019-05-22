@@ -15,15 +15,20 @@
 
 ### Usage
 #### Without Load Balancer
+##### Precondition
+![single_thread](img/single_thread.png)
 - Thread
     - `python server_thread_http.py`
 
 
+![single_async](img/single_async.png)
 - Async
     - `python server_async_http.py`
 
 
 #### With Load Balancer
+##### Precondition
+![loadbalancer](img/loadbalancer.png)
 - Thread
     - `bash thread.sh`
 
