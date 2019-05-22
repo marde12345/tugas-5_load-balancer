@@ -41,3 +41,28 @@
 - Testing
     - on another terminal => `ab -m [method] -n [n_request] -c [concurrency level] url`
     - CAUTION: if you test web server with load balancer, configure your url to you load balancer running port.
+
+#### Documentation
+- Async
+    - Withouth Load Balancer
+        - n = 20000, c = 20
+        ![20000-20](img/async/server_async_POST_20000-20.png)
+        - n = 20000, c = 50
+        ![20000-50](img/async/server_async_POST_20000-50.png)
+        - n = 20000, c = 100
+        ![20000-100](img/async/server_async_POST_20000-100.png)
+        - n = 20000, c = 120
+        ![20000-120](img/async/server_async_POST_20000-120.png)
+        - n = 20000, c = 130
+        ![20000-130](img/async/server_async_POST_20000-130.png)
+
+    - With Load Balancer
+        - n = 20000, c = 20
+        ![20000-20](img/async/server_async_POST_wlb_20000-20.png)
+        - n = 20000, c = 50
+        ![20000-50](img/async/server_async_POST_wlb_20000-50.png)
+        - n = 20000, c = 90
+        ![20000-90](img/async/server_async_POST_wlb_20000-90.png)
+        - n = 20000, c = 100
+        ![20000-100](img/async/server_async_POST_wlb_20000-100.png)
+- Thread
