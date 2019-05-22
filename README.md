@@ -66,3 +66,36 @@
         - n = 20000, c = 100
         ![20000-100](img/async/server_async_POST_wlb_20000-100.png)
 - Thread
+    - HEAD Method
+        - n = 20000, c = 1
+        ![20000-20](img/thread/server_thread_HEAD_20000-1.png)
+        - n = 20000, c = 12
+        ![20000-20](img/thread/server_thread_HEAD_20000-12.png)
+        - n = 20000, c = 15
+        ![20000-20](img/thread/server_thread_HEAD_20000-15.png)
+        - n = 20000, c = 17
+        ![20000-20](img/thread/server_thread_HEAD_20000-17.png)
+    - POST Method
+        - n = 10, c = 1
+        ![20000-20](img/thread/server_thread_POST_10-1.png)
+        - n = 50, c = 1
+        ![20000-20](img/thread/server_thread_POST_50-1.png)
+        - n = 100, c = 1
+        ![20000-20](img/thread/server_thread_POST_100-1.png)
+        - n = 20000, c = 1
+        ![20000-20](img/thread/server_thread_POST_20000-1.png)
+        - n = 20000, c = 20
+        ![20000-20](img/thread/server_thread_POST_20000-20.png)
+    - OPTIONS Method
+        - n = 20000, c = 1
+        ![20000-20](img/thread/server_thread_OPTIONS_20000-1.png)
+        - n = 20000, c = 10
+        ![20000-20](img/thread/server_thread_OPTIONS_20000-10.png)
+        - n = 20000, c = 15
+        ![20000-20](img/thread/server_thread_OPTIONS_20000-15.png)
+        - n = 20000, c = 20
+        ![20000-20](img/thread/server_thread_OPTIONS_20000-20.png)
+        - n = 20000, c = 50
+        ![20000-20](img/thread/server_thread_OPTIONS_20000-50.png)
+        - n = 20000, c = 100
+        ![20000-20](img/thread/server_thread_OPTIONS_20000-100.png)
